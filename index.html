@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Invitaciones Digitales Demo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+text-align:center;
+}
+
+/* COVER */
+
+.cover{
+
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+background-size:cover;
+background-position:center;
+
+transition:1s;
+
+}
+
+.cover-overlay{
+
+background:rgba(0,0,0,0.45);
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+}
+
+.cover-content{
+
+position:relative;
+z-index:2;
+
+}
+
+.cover h1{
+
+font-family:'Playfair Display',serif;
+font-size:56px;
+letter-spacing:4px;
+
+animation:titleReveal 2s;
+
+}
+
+.cover p{
+
+opacity:0;
+animation:fadeUp 2s forwards;
+animation-delay:1.2s;
+
+}
+
+/* EVENT SELECTOR */
+
+.selector{
+
+background:#111;
+padding:25px;
+
+}
+
+.selector button{
+
+margin:10px;
+padding:12px 26px;
+border:none;
+border-radius:30px;
+background:#c89b6d;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.selector button:hover{
+
+transform:scale(1.05);
+background:#b88755;
+
+}
+
+/* EVENT SECTION */
+
+.section{
+
+display:none;
+background:#faf7f2;
+color:#333;
+padding:80px 20px;
+
+}
+
+.section.active{
+
+display:block;
+animation:fadeIn 1s;
+
+}
+
+.section h2{
+
+font-family:'Playfair Display',serif;
+font-size:38px;
+
+}
+
+.date{
+
+font-size:26px;
+margin:20px 0;
+
+}
+
+/* BUTTONS */
+
+.button{
+
+display:block;
+margin:18px auto;
+padding:16px;
+width:85%;
+max-width:320px;
+
+background:#c89b6d;
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+transition:0.3s;
+
+}
+
+.button:hover{
+
+transform:scale(1.05);
+background:#b88755;
+
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes titleReveal{
+
+from{
+opacity:0;
+letter-spacing:20px;
+}
+
+to{
+opacity:1;
+letter-spacing:4px;
+}
+
+}
+
+@keyframes fadeIn{
+
+from{opacity:0}
+to{opacity:1}
+
+}
+
+footer{
+
+padding:40px;
+background:#faf7f2;
+color:#777;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- COVER -->
+
+<section id="cover" class="cover">
+
+<div class="cover-overlay"></div>
+
+<div class="cover-content">
+
+<h1 id="coverTitle">Diego & Giselle</h1>
+
+<p id="coverSubtitle">Una historia que merece celebrarse</p>
+
+</div>
+
+</section>
+
+<!-- SELECTOR -->
+
+<div class="selector">
+
+<button onclick="changeEvent('wedding')">💍 Boda</button>
+<button onclick="changeEvent('birthday')">🎂 Cumpleaños</button>
+<button onclick="changeEvent('baby')">👶 Baby Shower</button>
+
+</div>
+
+<!-- WEDDING -->
+
+<section id="wedding" class="section active">
+
+<h2>Diego & Giselle</h2>
+
+<div class="date">
+
+15 Noviembre 2026
+
+</div>
+
+<p>
+
+Hacienda San José<br>
+Ciudad de México
+
+</p>
+
+<a class="button">📍 Cómo llegar</a>
+
+<a class="button">💌 Confirmar asistencia</a>
+
+<a class="button">💬 Contactar por WhatsApp</a>
+
+</section>
+
+<!-- BIRTHDAY -->
+
+<section id="birthday" class="section">
+
+<h2>¡Cumpleaños de Sofía!</h2>
+
+<div class="date">
+
+22 Agosto 2026
+
+</div>
+
+<p>
+
+Salón Fiesta Kids<br>
+Ciudad de México
+
+</p>
+
+<a class="button">📍 Cómo llegar</a>
+
+<a class="button">🎁 Ver mesa de regalos</a>
+
+<a class="button">💬 Contactar por WhatsApp</a>
+
+</section>
+
+<!-- BABY SHOWER -->
+
+<section id="baby" class="section">
+
+<h2>Baby Shower de Valentina</h2>
+
+<div class="date">
+
+10 Octubre 2026
+
+</div>
+
+<p>
+
+Casa de los Abuelos<br>
+Ciudad de México
+
+</p>
+
+<a class="button">📍 Cómo llegar</a>
+
+<a class="button">🎀 Lista de regalos</a>
+
+<a class="button">💬 Contactar por WhatsApp</a>
+
+</section>
+
+<footer>
+
+Demo de invitaciones digitales
+
+</footer>
+
+<script>
+
+/* EVENT DATA */
+
+const events = {
+
+wedding:{
+image:"https://images.unsplash.com/photo-1519741497674-611481863552",
+title:"Diego & Giselle",
+subtitle:"Una historia que merece celebrarse"
+},
+
+birthday:{
+image:"https://images.unsplash.com/photo-1530103862676-de8c9debad1d",
+title:"Cumpleaños de Sofía",
+subtitle:"Acompáñanos a celebrar un día lleno de diversión"
+},
+
+baby:{
+image:"https://img.freepik.com/fotos-premium/fiesta-baby-shower-amigos-madre-embarazada-sosteniendo-su-vientre-amigos-esperando-fiesta-genero-embarazo-nina-circulo-amigos_644339-172.jpg",
+title:"Baby Shower de Valentina",
+subtitle:"Una pequeña vida está por llegar"
+}
+
+};
+
+/* INITIAL COVER */
+
+const cover=document.getElementById("cover");
+
+cover.style.backgroundImage=`url(${events.wedding.image})`;
+
+/* CHANGE EVENT */
+
+function changeEvent(event){
+
+const data=events[event];
+
+cover.style.backgroundImage=`url(${data.image})`;
+
+document.getElementById("coverTitle").innerText=data.title;
+
+document.getElementById("coverSubtitle").innerText=data.subtitle;
+
+const sections=document.querySelectorAll(".section");
+
+sections.forEach(section=>{
+
+section.classList.remove("active");
+
+});
+
+document.getElementById(event).classList.add("active");
+
+}
+
+</script>
+
+</body>
+
+</html>
