@@ -252,6 +252,41 @@ body{
 .details::before{width:240px;height:240px;background:var(--woody-yellow);top:120px;left:-90px;}
 .details::after{width:260px;height:260px;background:var(--buzz-green);bottom:40px;right:-100px;opacity:.28;}
 
+/* ===== Personajes de Toy Story ===== */
+.hero-char{
+  position:absolute;
+  bottom:46px;
+  z-index:2;
+  width:auto;
+  pointer-events:none;
+  filter:drop-shadow(0 12px 14px rgba(20,50,90,.30));
+  opacity:0;
+  animation:charIn 1s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+.hero-woody{left:-20px;height:clamp(118px,26vw,250px);animation-delay:1.2s;}
+.hero-buzz{right:-14px;height:clamp(140px,30vw,290px);animation-delay:1.4s;}
+
+.dc{
+  position:absolute;
+  z-index:1;
+  width:auto;
+  pointer-events:none;
+  filter:drop-shadow(0 8px 12px rgba(20,50,90,.22));
+}
+.dc-aliens{top:8px;left:1.5%;width:clamp(130px,18vw,215px);}
+.dc-woody2{top:30px;right:2%;width:clamp(85px,12vw,150px);}
+.dc-buzz2{top:44%;right:-1.5%;width:clamp(115px,16vw,200px);}
+.dc-jessie{bottom:24px;left:0.5%;width:clamp(120px,17vw,205px);}
+
+@keyframes charIn{from{opacity:0;transform:translateY(42px);}to{opacity:1;transform:translateY(0);}}
+
+@media (max-width:760px){
+  .dc-jessie{bottom:8px;left:-12px;width:122px;}
+  .dc-aliens{top:auto;left:auto;bottom:16px;right:-10px;width:124px;}
+  .dc-woody2{top:-10px;left:4px;right:auto;width:78px;}
+  .dc-buzz2{display:none;}
+}
+
 .card{
   position:relative;
   z-index:2;
@@ -482,7 +517,7 @@ footer{
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;scroll-behavior:auto !important;}
-  .badge,.kicker,.names,.subtitle,.hero__date,.scroll-cue{opacity:1 !important;transform:none !important;}
+  .badge,.kicker,.names,.subtitle,.hero__date,.scroll-cue,.hero-char{opacity:1 !important;transform:none !important;}
   /* Sin animación las nubes quedarían fuera de pantalla; las reubicamos visibles */
   .cloud{transform:none !important;}
   .cloud.c1{left:6%;}  .cloud.c2{left:68%;} .cloud.c3{left:28%;} .cloud.c4{left:84%;} .cloud.c5{left:48%;}
@@ -518,6 +553,9 @@ footer{
     <span class="badge">🤠 Temática: Toy Story 🚀</span>
   </div>
 
+  <img class="hero-char hero-woody" src="img/woody.png" alt="Woody" />
+  <img class="hero-char hero-buzz" src="img/buzz.png" alt="Buzz Lightyear" />
+
   <div class="scroll-cue">Ver detalles<span>▾</span></div>
 
   <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
@@ -527,6 +565,10 @@ footer{
 
 <!-- ===================== DETALLES ===================== -->
 <section class="details">
+  <img class="dc dc-aliens" src="img/alien.png" alt="" loading="lazy" decoding="async" />
+  <img class="dc dc-woody2" src="img/woody2.png" alt="" loading="lazy" decoding="async" />
+  <img class="dc dc-buzz2" src="img/buzz2.png" alt="" loading="lazy" decoding="async" />
+  <img class="dc dc-jessie" src="img/jessie.png" alt="" loading="lazy" decoding="async" />
   <div class="card">
     <div class="card__star">⭐</div>
 
