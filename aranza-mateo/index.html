@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aranza &amp; Mateo · ¡Nuestro cumpleaños! 🤠🚀</title>
+<meta name="theme-color" content="#4a9fe0" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E%E2%AD%90%3C/text%3E%3C/svg%3E" />
+<meta name="description" content="Estás totalmente invitado al cumpleaños de Aranza y Mateo. Domingo 28 de junio 2026, Salón Kids, Toluca. Tema: Toy Story. ¡Ven listo para la aventura!" />
+
+<!-- Open Graph (vista previa al compartir por WhatsApp) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aranza & Mateo · ¡Nuestro cumpleaños! 🤠🚀" />
+<meta property="og:description" content="Domingo 28 de junio 2026 · Salón Kids, Toluca · Tema: Toy Story. ¡Estás totalmente invitado!" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Luckiest+Guy&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --sky-top:#c4ecff;
+  --sky-mid:#82c4f2;
+  --sky-bot:#4a9fe0;
+  --cloud:#ffffff;
+  --cream:#fff8ec;
+  --cream-deep:#fdeccd;
+  --ink:#27314c;
+  --ink-soft:#6a7390;
+  --woody-yellow:#f7c544;
+  --woody-red:#e04a2f;
+  --woody-red-dark:#c23a22;
+  --buzz-green:#34a853;
+  --buzz-green-dark:#258043;
+  --buzz-purple:#6b4fb6;
+  --wa-green:#1faa53;
+  --wa-green-dark:#138a42;
+  --shadow-card:0 26px 60px -22px rgba(24,55,102,.45);
+  --shadow-btn:0 12px 22px -10px rgba(20,40,80,.55);
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:'Nunito',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============ HERO / PORTADA ============ */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:64px 22px 130px;
+  overflow:hidden;
+  background:
+    radial-gradient(120% 80% at 50% 8%, rgba(255,255,255,.45), transparent 60%),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 48%, var(--sky-bot) 100%);
+}
+
+/* nubes flotantes estilo cuarto de Andy */
+.cloud{
+  position:absolute;
+  background:var(--cloud);
+  border-radius:100px;
+  opacity:.95;
+  filter:drop-shadow(0 14px 16px rgba(70,120,170,.18));
+  animation:drift linear infinite;
+  z-index:1;
+}
+.cloud::before,.cloud::after{
+  content:"";
+  position:absolute;
+  background:var(--cloud);
+  border-radius:50%;
+}
+.cloud::before{width:62%;height:160%;top:-78%;left:14%;}
+.cloud::after{width:42%;height:120%;top:-52%;right:14%;}
+
+.cloud.c1{width:130px;height:42px;top:14%;left:-20%;animation-duration:42s;}
+.cloud.c2{width:90px;height:30px;top:30%;left:-25%;animation-duration:56s;animation-delay:-12s;opacity:.85;}
+.cloud.c3{width:170px;height:54px;top:62%;left:-30%;animation-duration:64s;animation-delay:-30s;}
+.cloud.c4{width:70px;height:24px;top:48%;left:-20%;animation-duration:48s;animation-delay:-6s;opacity:.8;}
+.cloud.c5{width:110px;height:36px;top:76%;left:-25%;animation-duration:52s;animation-delay:-20s;opacity:.9;}
+
+@keyframes drift{
+  from{transform:translateX(0);}
+  to{transform:translateX(160vw);}
+}
+
+/* destellos "al infinito y más allá" */
+.sparkle{
+  position:absolute;
+  color:#fff;
+  font-size:18px;
+  opacity:.85;
+  z-index:1;
+  animation:twinkle 3.2s ease-in-out infinite;
+  text-shadow:0 0 10px rgba(255,255,255,.8);
+}
+.sparkle.s1{top:18%;right:16%;font-size:22px;animation-delay:.2s;}
+.sparkle.s2{top:34%;left:12%;font-size:14px;animation-delay:1.1s;}
+.sparkle.s3{top:60%;right:10%;font-size:18px;animation-delay:1.9s;}
+.sparkle.s4{top:12%;left:22%;font-size:12px;animation-delay:2.6s;}
+@keyframes twinkle{
+  0%,100%{opacity:.2;transform:scale(.7) rotate(0deg);}
+  50%{opacity:1;transform:scale(1.15) rotate(15deg);}
+}
+
+.hero__content{position:relative;z-index:3;width:100%;max-width:620px;}
+
+.badge{
+  display:flex;
+  width:fit-content;
+  align-items:center;
+  gap:8px;
+  background:var(--woody-red);
+  color:#fff;
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  font-size:.78rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:9px 18px;
+  border-radius:999px;
+  box-shadow:0 8px 18px -8px rgba(224,74,47,.8);
+  transform:rotate(-2deg);
+  margin:22px auto 0;
+  opacity:0;
+  animation:pop .8s 1.35s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+
+.kicker{
+  font-family:'Fredoka',sans-serif;
+  font-weight:500;
+  color:#fff;
+  font-size:1.05rem;
+  margin:26px 0 6px;
+  text-shadow:0 2px 10px rgba(30,70,120,.4);
+  opacity:0;
+  animation:fadeUp .9s .35s forwards;
+}
+
+.names{
+  font-family:'Luckiest Guy',cursive;
+  font-weight:400;
+  color:#fff;
+  font-size:clamp(3.2rem,16vw,6.2rem);
+  line-height:.95;
+  letter-spacing:1px;
+  margin:4px 0;
+  text-shadow:
+    0 4px 0 var(--woody-red),
+    0 8px 0 var(--woody-red-dark),
+    0 14px 24px rgba(20,50,90,.35);
+  opacity:0;
+  animation:titleReveal 1.1s .5s cubic-bezier(.2,.9,.3,1.2) forwards;
+}
+.names .amp{
+  display:block;
+  font-size:.42em;
+  color:var(--woody-yellow);
+  text-shadow:0 3px 0 rgba(180,120,0,.5);
+  margin:2px 0;
+}
+
+.subtitle{
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  color:#fff;
+  font-size:clamp(1.25rem,5.5vw,1.8rem);
+  margin:14px 0 0;
+  text-shadow:0 2px 12px rgba(30,70,120,.45);
+  opacity:0;
+  animation:fadeUp 1s .9s forwards;
+}
+
+.hero__date{
+  display:inline-block;
+  margin-top:22px;
+  background:rgba(255,255,255,.92);
+  color:var(--ink);
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  font-size:.95rem;
+  padding:10px 20px;
+  border-radius:999px;
+  box-shadow:0 10px 24px -12px rgba(20,50,90,.5);
+  opacity:0;
+  animation:pop .8s 1.15s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+
+.scroll-cue{
+  position:absolute;
+  bottom:118px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  color:#fff;
+  font-family:'Fredoka',sans-serif;
+  font-size:.8rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  opacity:0;
+  animation:fadeUp 1s 1.5s forwards;
+  text-shadow:0 2px 8px rgba(30,70,120,.5);
+}
+.scroll-cue span{display:block;font-size:1.4rem;animation:bounce 1.8s ease-in-out infinite;}
+
+/* divisor de ola hacia la sección crema */
+.wave{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  width:100%;
+  z-index:2;
+  display:block;
+  line-height:0;
+}
+
+/* ============ DETALLES ============ */
+.details{
+  position:relative;
+  background:var(--cream);
+  padding:10px 20px 70px;
+}
+.details::before,.details::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:.4;
+  z-index:0;
+}
+.details::before{width:240px;height:240px;background:var(--woody-yellow);top:120px;left:-90px;}
+.details::after{width:260px;height:260px;background:var(--buzz-green);bottom:40px;right:-100px;opacity:.28;}
+
+.card{
+  position:relative;
+  z-index:2;
+  max-width:540px;
+  margin:-46px auto 0;
+  background:#fff;
+  border-radius:30px;
+  padding:38px 26px 34px;
+  box-shadow:var(--shadow-card);
+  border:3px solid #fff;
+}
+
+.card__star{
+  width:64px;height:64px;
+  margin:-70px auto 10px;
+  display:grid;place-items:center;
+  font-size:34px;
+  background:var(--woody-yellow);
+  border-radius:50%;
+  box-shadow:0 10px 22px -8px rgba(247,197,68,.9), inset 0 -4px 0 rgba(180,130,10,.25);
+  border:4px solid #fff;
+}
+
+.invite-line{
+  text-align:center;
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  font-size:1.15rem;
+  line-height:1.5;
+  color:var(--ink);
+  margin:6px 0 4px;
+}
+.invite-line .hl{color:var(--woody-red);}
+.invite-sub{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:.98rem;
+  margin:0 0 22px;
+}
+
+/* cuenta regresiva */
+.countdown-wrap{
+  text-align:center;
+  margin:8px 0 26px;
+}
+.countdown-title{
+  font-family:'Fredoka',sans-serif;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:.72rem;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+.countdown{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+}
+.count-box{
+  background:linear-gradient(180deg,#fffdf7,#fdeecb);
+  border:2px solid #f3dca0;
+  border-radius:16px;
+  padding:10px 4px 8px;
+  min-width:62px;
+}
+.count-num{
+  font-family:'Luckiest Guy',cursive;
+  font-size:1.7rem;
+  line-height:1;
+  color:var(--woody-red);
+}
+.count-lbl{
+  font-family:'Fredoka',sans-serif;
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--ink-soft);
+  margin-top:4px;
+}
+.countdown-bigday{
+  font-family:'Luckiest Guy',cursive;
+  font-size:1.5rem;
+  color:var(--buzz-green);
+}
+
+/* filas de información */
+.info-list{margin:6px 0 4px;}
+.info{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  text-align:left;
+  padding:15px 4px;
+  border-bottom:2px dashed #efe6d2;
+}
+.info:last-child{border-bottom:none;}
+.info__icon{
+  flex:0 0 auto;
+  width:48px;height:48px;
+  border-radius:15px;
+  display:grid;place-items:center;
+  font-size:1.4rem;
+}
+.i-date{background:#e7f2ff;}
+.i-time{background:#fff1d6;}
+.i-place{background:#ffe6e0;}
+.i-theme{background:#e4f7e7;}
+.info__label{
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  font-size:.7rem;
+  color:var(--ink-soft);
+}
+.info__value{
+  font-weight:700;
+  font-size:1.02rem;
+  color:var(--ink);
+  line-height:1.35;
+}
+.info__value small{display:block;font-weight:600;color:var(--ink-soft);font-size:.85rem;}
+
+/* botones de acción */
+.actions{margin-top:26px;}
+.rsvp-note{
+  text-align:center;
+  font-family:'Fredoka',sans-serif;
+  font-weight:500;
+  color:var(--ink);
+  font-size:1rem;
+  margin:4px 0 14px;
+}
+.rsvp-note strong{color:var(--woody-red);}
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  margin:12px 0;
+  padding:17px 20px;
+  border-radius:18px;
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  font-size:1.08rem;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:var(--shadow-btn);
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.btn:hover{transform:translateY(-3px) scale(1.015);}
+.btn:active{transform:translateY(-1px) scale(.99);}
+.btn__emoji{font-size:1.25rem;}
+.btn--wa{background:linear-gradient(180deg,var(--wa-green),var(--wa-green-dark));}
+.btn--maps{background:linear-gradient(180deg,var(--woody-red),var(--woody-red-dark));}
+.btn small{font-weight:500;opacity:.85;font-size:.82rem;}
+.phone{
+  text-align:center;
+  margin-top:8px;
+  color:var(--ink-soft);
+  font-size:.92rem;
+}
+.phone a{color:var(--buzz-purple);font-weight:700;text-decoration:none;}
+
+/* footer */
+footer{
+  position:relative;
+  text-align:center;
+  padding:34px 20px 42px;
+  background:var(--cream);
+  color:var(--ink-soft);
+}
+.footer-names{
+  font-family:'Luckiest Guy',cursive;
+  color:var(--woody-red);
+  font-size:1.3rem;
+  letter-spacing:1px;
+}
+.footer-friend{
+  font-family:'Fredoka',sans-serif;
+  font-weight:500;
+  margin-top:6px;
+  font-size:.95rem;
+}
+.orkesta-credit{
+  display:inline-block;
+  margin-top:20px;
+  padding-top:14px;
+  border-top:1px dashed #ead9b8;
+  color:var(--ink-soft);
+  font-family:'Fredoka',sans-serif;
+  font-weight:500;
+  font-size:.78rem;
+  letter-spacing:.3px;
+  text-decoration:none;
+  opacity:.72;
+  transition:opacity .2s ease, transform .2s ease, color .2s ease;
+}
+.orkesta-credit strong{
+  font-weight:700;
+  color:var(--buzz-purple);
+}
+.orkesta-credit:hover,
+.orkesta-credit:focus-visible{
+  opacity:1;
+  transform:translateY(-1px);
+  color:var(--buzz-purple);
+}
+
+/* ============ ANIMACIONES ============ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:translateY(0);}}
+@keyframes titleReveal{from{opacity:0;transform:translateY(40px) scale(.9);letter-spacing:14px;}to{opacity:1;transform:translateY(0) scale(1);letter-spacing:1px;}}
+@keyframes pop{0%{opacity:0;transform:scale(.5);}100%{opacity:1;}}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+@media (min-width:600px){
+  .card{padding:46px 40px 40px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;scroll-behavior:auto !important;}
+  .badge,.kicker,.names,.subtitle,.hero__date,.scroll-cue{opacity:1 !important;transform:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== PORTADA ===================== -->
+<header class="hero">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+  <div class="cloud c4"></div>
+  <div class="cloud c5"></div>
+
+  <span class="sparkle s1">✦</span>
+  <span class="sparkle s2">✦</span>
+  <span class="sparkle s3">✦</span>
+  <span class="sparkle s4">✦</span>
+
+  <div class="hero__content">
+    <p class="kicker">¡Estás totalmente invitado a celebrar!</p>
+    <h1 class="names">Aranza<span class="amp">&amp;</span>Mateo</h1>
+    <p class="subtitle">¡Es nuestro cumpleaños! 🎉</p>
+    <span class="hero__date">📅 Domingo 28 de junio, 2026</span>
+    <span class="badge">🤠 Tema: Toy Story 🚀</span>
+  </div>
+
+  <div class="scroll-cue">Ver detalles<span>▾</span></div>
+
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#fff8ec" d="M0,64 C180,110 360,110 540,80 C720,50 900,10 1080,24 C1260,38 1350,72 1440,80 L1440,120 L0,120 Z"></path>
+  </svg>
+</header>
+
+<!-- ===================== DETALLES ===================== -->
+<section class="details">
+  <div class="card">
+    <div class="card__star">⭐</div>
+
+    <p class="invite-line">Ven a nuestro cumpleaños,<br /><span class="hl">Aranza y Mateo</span>.</p>
+    <p class="invite-sub">¡Acompáñanos a una aventura llena de juguetes y diversión!</p>
+
+    <!-- Cuenta regresiva -->
+    <div class="countdown-wrap">
+      <div class="countdown-title">Falta para la diversión</div>
+      <div class="countdown" id="countdown">
+        <div class="count-box"><div class="count-num" id="cd-days">0</div><div class="count-lbl">Días</div></div>
+        <div class="count-box"><div class="count-num" id="cd-hours">0</div><div class="count-lbl">Horas</div></div>
+        <div class="count-box"><div class="count-num" id="cd-mins">0</div><div class="count-lbl">Min</div></div>
+        <div class="count-box"><div class="count-num" id="cd-secs">0</div><div class="count-lbl">Seg</div></div>
+      </div>
+    </div>
+
+    <!-- Información del evento -->
+    <div class="info-list">
+      <div class="info">
+        <div class="info__icon i-date">📅</div>
+        <div>
+          <div class="info__label">Fecha</div>
+          <div class="info__value">Domingo 28 de junio, 2026</div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info__icon i-time">⏰</div>
+        <div>
+          <div class="info__label">Horario</div>
+          <div class="info__value">Cita 11:00 am<small>La fiesta inicia a las 12:00 pm</small></div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info__icon i-place">📍</div>
+        <div>
+          <div class="info__label">Lugar</div>
+          <div class="info__value">Salón Kids<small>Heriberto Enríquez y Las Torres, Toluca</small></div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info__icon i-theme">🎨</div>
+        <div>
+          <div class="info__label">Tema</div>
+          <div class="info__value">Toy Story<small>¡Ven listo para la aventura!</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acciones -->
+    <div class="actions">
+      <p class="rsvp-note"><strong>De favor confirmar</strong> tu asistencia 💛</p>
+
+      <a class="btn btn--wa" href="https://wa.me/525531897263?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Aranza%20y%20Mateo%20%F0%9F%8E%89" target="_blank" rel="noopener">
+        <span class="btn__emoji">💬</span> Confirmar asistencia <small>por WhatsApp</small>
+      </a>
+
+      <a class="btn btn--maps" href="https://maps.app.goo.gl/EqvS29Deu3stmxSx7" target="_blank" rel="noopener">
+        <span class="btn__emoji">📍</span> Cómo llegar
+      </a>
+
+      <p class="phone">O llámanos al <a href="https://wa.me/525531897263" target="_blank" rel="noopener">55&nbsp;3189&nbsp;7263</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-names">Aranza &amp; Mateo 🤠🚀</div>
+  <div class="footer-friend">¡Hay un amigo en ti… y te esperamos!</div>
+  <a class="orkesta-credit" href="https://orkestalo.com" target="_blank" rel="noopener">Hecho por el equipo de <strong>Orkesta</strong> · orkestalo.com</a>
+</footer>
+
+<script>
+/* Cuenta regresiva al inicio de la fiesta: 28 de junio 2026, 11:00 am (hora local) */
+(function(){
+  var target = new Date(2026, 5, 28, 11, 0, 0).getTime();
+  var elDays = document.getElementById('cd-days');
+  var elHours = document.getElementById('cd-hours');
+  var elMins = document.getElementById('cd-mins');
+  var elSecs = document.getElementById('cd-secs');
+  var container = document.getElementById('countdown');
+  if(!container){ return; }
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+  function tick(){
+    var diff = target - Date.now();
+    if(diff <= 0){
+      container.innerHTML = '<div class="countdown-bigday">🎉 ¡Hoy es el gran día! 🎉</div>';
+      clearInterval(timer);
+      return;
+    }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    elDays.textContent = days;
+    elHours.textContent = pad(hours);
+    elMins.textContent = pad(mins);
+    elSecs.textContent = pad(secs);
+  }
+
+  tick();
+  var timer = setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
